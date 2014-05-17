@@ -21,6 +21,8 @@
 		AA17920619278DC800D40DA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1791E819278DC800D40DA6 /* UIKit.framework */; };
 		AA17920E19278DC800D40DA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA17920C19278DC800D40DA6 /* InfoPlist.strings */; };
 		AA17921019278DC800D40DA6 /* RadarChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA17920F19278DC800D40DA6 /* RadarChartTests.m */; };
+		AA179220192792F900D40DA6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA17921F192792F900D40DA6 /* QuartzCore.framework */; };
+		AA17926D192795B200D40DA6 /* libRadarChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA179268192795B200D40DA6 /* libRadarChart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,11 @@
 		AA17920B19278DC800D40DA6 /* RadarChartTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadarChartTests-Info.plist"; sourceTree = "<group>"; };
 		AA17920D19278DC800D40DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA17920F19278DC800D40DA6 /* RadarChartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadarChartTests.m; sourceTree = "<group>"; };
+		AA17921F192792F900D40DA6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA179268192795B200D40DA6 /* libRadarChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRadarChart.a; sourceTree = "<group>"; };
+		AA17926A192795B200D40DA6 /* RadarChartComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarChartComponent.h; sourceTree = "<group>"; };
+		AA17926B192795B200D40DA6 /* RadarChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarChartDatasource.h; sourceTree = "<group>"; };
+		AA17926C192795B200D40DA6 /* RadarChartShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarChartShapeLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA17926D192795B200D40DA6 /* libRadarChart.a in Frameworks */,
+				AA179220192792F900D40DA6 /* QuartzCore.framework in Frameworks */,
 				AA1791E719278DC800D40DA6 /* CoreGraphics.framework in Frameworks */,
 				AA1791E919278DC800D40DA6 /* UIKit.framework in Frameworks */,
 				AA1791E519278DC800D40DA6 /* Foundation.framework in Frameworks */,
@@ -101,6 +110,7 @@
 		AA1791E319278DC800D40DA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA17921F192792F900D40DA6 /* QuartzCore.framework */,
 				AA1791E419278DC800D40DA6 /* Foundation.framework */,
 				AA1791E619278DC800D40DA6 /* CoreGraphics.framework */,
 				AA1791E819278DC800D40DA6 /* UIKit.framework */,
@@ -112,6 +122,8 @@
 		AA1791EA19278DC800D40DA6 /* RadarChart */ = {
 			isa = PBXGroup;
 			children = (
+				AA179268192795B200D40DA6 /* libRadarChart.a */,
+				AA179269192795B200D40DA6 /* RadarChart */,
 				AA1791F319278DC800D40DA6 /* AppDelegate.h */,
 				AA1791F419278DC800D40DA6 /* AppDelegate.m */,
 				AA1791F619278DC800D40DA6 /* Main.storyboard */,
@@ -150,6 +162,16 @@
 				AA17920C19278DC800D40DA6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA179269192795B200D40DA6 /* RadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				AA17926A192795B200D40DA6 /* RadarChartComponent.h */,
+				AA17926B192795B200D40DA6 /* RadarChartDatasource.h */,
+				AA17926C192795B200D40DA6 /* RadarChartShapeLayer.h */,
+			);
+			path = RadarChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +403,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RadarChart/RadarChart-Prefix.pch";
 				INFOPLIST_FILE = "RadarChart/RadarChart-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadarChart",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +421,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RadarChart/RadarChart-Prefix.pch";
 				INFOPLIST_FILE = "RadarChart/RadarChart-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadarChart",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,6 +490,7 @@
 				AA17921519278DC800D40DA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA17921619278DC800D40DA6 /* Build configuration list for PBXNativeTarget "RadarChartTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +499,7 @@
 				AA17921819278DC800D40DA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
